@@ -66,8 +66,8 @@ not(8 > 9) ( = True) this is negative operator
 ### Math Functions:
 abs(-8) ( =8) return absolute value of a number
 divmod(26,6) ( =(4,2)) return quotient and remainder of integer division
-max(3, 1, 2) ( =3)
-min(3, -3, 1, 2, -5) ( =-5)
+max(3, 1, 2) ( =3) can be used for words, sorting based on the first letters
+min(3, -3, 1, 2, -5) ( =-5) can be used for words, sorting based on the first letters
 pow(2,3) ( =8) the same as 2**3
 round(-4.568, 1) ( =-4.6) round a floating-point value to a given position
 sum( [5,8] ) ( =13) sum the items of an iterable
@@ -93,6 +93,67 @@ e = [4,5,6]
   ***
   d.extend(e) ( = [1,2,3,4,5,6] ) the same as d+e
   d[3] ( = 4)
+  ***
+  d.insert(1,6) ( = [1,6,2,3] ) insert 6 at the position 1
+  ***
+  d.remove(1) ( = [2,3] ) remove the first occurence of element '1'
+  ***
+  d.pop() ( = [1,2] ) remove the last element of the list
+  ***
+  d.pop(1) ( = [1,3] ) remove the second element
+  ***
+  d.reverse() ( = [3,2,1] )
+  ***
+  d.count(1) ( = 1) count the number of element '1'
+  ***
+  d.sort(reverse = True) ( = [3,2,1] ) sort the numbers (all types of number) or words (first letters), which are elements of the list in descendant order; 'reverse = False' or nothing inside () mean ascendant order
+  ***
+  d[0:2] ( = 2) the same as d[1], meaning call the elements between position 0 and 2
+  ***
+  d[::2] ( = [1,3] ) slice with position + 2 (0,2,4,...)
+  ***
+  f = d
+  f.append(7)
+  print(d) ( = [1,2,3,7] ) lists can be referenced
+  ***
+  f = d[:]
+  f.append(7)
+  print(d) ( = [1,2,3] ) shallow copy, works well with one dimension lists
+  ***
+  d.append(e) ( = [1,2,3, [4,5,6] ] )
+  f = d[:]
+  f[1] = 'dao'
+  print(d) ( = [1,2,3, [4,5,6] ] )
+  f[3][0] = 'dao'
+  print(d) ( = [1,2,3, ['dao',5,6] ] ) be careful with complex lists
+  
+## Tuples:
+a = (1,2,3,4) the same as a = 1,2,3,4 because tuples do not need parenthesis
+a[2] ( = 3)
+a[3] = 5 (Error) tuples' element can not be changed
+x,y,z,k = a
+print(x) ( =1)
+print(y) ( =2)
+print(z) ( =3)
+print(k) ( =4)
+***
+b = 1
+c = 2
+a = (b,c)
+print(a) ( = (1,2) )
+***
+a = (1,2,3,[5,6]) a tuple with a list inside
+a[3][0] = 7 elements of a list, which is inside a tuple, can be changed but the list itself can not be replaced
+b = [1,2,3,(5,6)] a list with a tuple inside
+b[3][0] = 7 (error)
+b[3] = 4 (good) a tuple inside a list can be replaced
+***
+a = ('ant','bee','cat')
+max(a) ( = 'cat')
+
+
+
+  
 
 
 
