@@ -1,0 +1,10 @@
+****************************
+# Numpy is the most popular library for scientific computer in python. It provides high speed multidimensional array tools, such as array manipulation and linear algebra.
+# An array is like a list but contains only elements of the same type.
+****************************
+
+import numpy as np
+
+
+
+
