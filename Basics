@@ -1,3 +1,14 @@
+### Basics Syntaxs:
+print(r'j and r\n') ( = j and r\n) # use 'r' before strings to indicate raw strings
+***
+print('''Jimmy and Ruby. 
+Jimmy love Ruby''') # an alternative for using '\n'
+***
+i = 3; s = 0   # use ';' to write many logical lines on the same physical line
+***
+print('Jimmy love \
+Ruby)  # use '\' to break a long logical line into multiple physical lines
+
 ### Data Types:
 
 ## Integer:
@@ -30,10 +41,6 @@ print('{} was {} years old when he wrote this book'.format(name, age)) # format 
 print('Why is {} playing with that python?'.format(name))
 print('{0:.4f}'.format(2/3)) ( = 0.6667)
 print('{0:_^15}'.format('hello')) ( = _____hello_____)
-print(r'j and r\n') ( = j and r\n) # use 'r' before strings to indicate raw strings
-***
-print('''Jimmy and Ruby. 
-Jimmy love Ruby''') # another way instead of using '\n'
 
 ## Boolean:
 10 > 9 ( = True)
@@ -187,7 +194,7 @@ i = 0
 while i < 10:
   i += 1
   if i == 7:
-    break      # Terminate the cycle and move down to the next block
+    break      # Terminate the cycle and move down to the next block. a block is a number of statements which have the same identation.
     print(i)
 print('While statement was completed')
 ***
