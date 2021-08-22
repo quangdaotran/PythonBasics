@@ -23,6 +23,14 @@ print('Hello\nWorld') ( \n break the line)
 print('a\\b') ( = a\b) # useful when writing file path
 print('The quotation character is (\')') ( = The quotation character is ('))
 print('The quotation character is (+)') ( = The quotation character is (+))
+***
+age = 20
+name = 'Swaroop'
+print('{} was {} years old when he wrote this book'.format(name, age)) # format function
+print('Why is {} playing with that python?'.format(name))
+print('{0:.4f}'.format(2/3)) ( = 0.6667)
+print('{0:_^15}'.format('hello')) ( = _____hello_____)
+print(r'j and r\n') ( = j and r\n) # use 'r' before strings to indicate raw strings
 
 ## Boolean:
 10 > 9 ( = True)
