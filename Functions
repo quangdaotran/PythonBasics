@@ -1,0 +1,28 @@
+### Define new function:
+x = 50
+def func(x):   # x: parameter of the function and the local variable
+    print('x is', x)
+    x = 2
+    print('Changed local x to', x)
+func(6)
+print('x is still', x)    ( = x is still 50) # x here is the x defined at the first line of code
+***
+x = 50
+def func():    # a global variable can not be a parameter
+  global x    # 'global' statement indicates a variable belongs to an outermost block (both inside and outside the function)
+  print('x is', x)
+  x = 2
+  print('Changed global x to', x)
+func()
+print('Value of x is', x)     ( = Value of x is 2) # x here is the global variable
+***
+def say(message, times=1):   # 1 is the default argument value; only parameters at the end of the parameter list can be given a default argument value.
+  print(message * times)
+say('Hello')    ( = Hello)
+say('World', 5)    ( = WorldWorldWorldWorldWorld)
+***
+def func(a, b=5, c=10):
+  print('a is', a, 'and b is', b, 'and c is', c)
+func(3, 7)   ( = a is 3 and b is 7 and c is 10)
+func(25, c=24)    ( = a is 25 and b is 5 and c is 24)
+func(c=50, a=100)    ( = a is 100 and b is 5 and c is 50)   # specify the arguments with keywords (c,a) to ignore the right order
