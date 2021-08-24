@@ -16,7 +16,7 @@ def func():    # a global variable can not be a parameter
 func()
 print('Value of x is', x)     ( = Value of x is 2) # x here is the global variable
 ***
-def say(message, times=1):   # 1 is the default argument value; only parameters at the end of the parameter list can be given a default argument value.
+def say(message, times=1):   # 1 is the default argument value; a parameter with default value can not be followed by a parameter without default value
   print(message * times)
 say('Hello')    ( = Hello)
 say('World', 5)    ( = WorldWorldWorldWorldWorld)
@@ -26,3 +26,36 @@ def func(a, b=5, c=10):
 func(3, 7)   ( = a is 3 and b is 7 and c is 10)
 func(25, c=24)    ( = a is 25 and b is 5 and c is 24)
 func(c=50, a=100)    ( = a is 100 and b is 5 and c is 50)   # specify the arguments with keywords (c,a) to ignore the right order
+***
+def total(a=5, *numbers, **phonebook):     #  * represents a tuple while ** represents a dictionary; this way can help to take any number of parameters
+    print('a', a)
+    for single_item in numbers:    # iterate through all the items in tuple
+        print('single_item', single_item)
+    for first_part, second_part in phonebook.items():     # iterate through all the items in dictionary
+        print(first_part,second_part)
+total(10,1,2,3,andy = 9, ruby=10, jimmy =11)
+***
+def maximum(x, y):
+    if x > y:
+        return x    # return statement returns a value from the function
+    elif x == y:
+        return 'The numbers are equal'
+    else:
+        return y
+print(maximum(2, 3)) ( =3)
+***
+def some_function():    
+    pass     # pass statement is used to indicate an empty block of statements
+***
+def print_max(x, y):
+    '''Prints the maximum of two numbers.    # instructions for the function
+    The two values must be integers.'''
+    # convert to integers, if possible
+    x = int(x)
+    y = int(y)
+    if x > y:
+        print(x, 'is maximum')
+    else:
+        print(y, 'is maximum')
+ print_max(3,4)   ( = 4 is maximum)
+ print(print_max.__doc__)   # __doc__ is docstrings, a tool helps to display any strings (instructions above) defined in the function if there was any
