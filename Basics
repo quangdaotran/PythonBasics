@@ -8,6 +8,8 @@ i = 3; s = 0   # use ';' to write many logical lines on the same physical line
 ***
 print('Jimmy love \
 Ruby)  # use '\' to break a long logical line into multiple physical lines
+***
+help(print)  # using docstrings tool to bring out the instructions for a function
 
 ### Data Types:
 
