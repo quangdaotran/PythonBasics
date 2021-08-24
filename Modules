@@ -1,0 +1,10 @@
+### Writing new Module:
+# the simplest way is to create a file with a .py extension that contains functions and variables.
+# Another method is to write the modules in the native language in which the Python interpreter itself was written. For example, you can write modules in the C programming language, 
+# and when compiled they can be used from your Python code when using the standard Python interpreter.
+
+import sys   # use Python standard library module 'sys'
+print('The command line arguments are:')
+for i in sys.argv:
+    print(i)
+print('\n\nThe PYTHONPATH is', sys.path, '\n')
