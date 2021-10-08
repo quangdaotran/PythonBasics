@@ -1,16 +1,28 @@
 ### There are four built-in data structures in Python: list, tuple, dictionary and set.
 
-### List:
+### List (a type of sequence):
 # items of a list are mutable
 shoplist = ['apple', 'mango', 'carrot', 'banana']
 print('These items are:', end=' ')   # use "end" parameter in the call to "print" fuction to indicate that we want to end the output with a space instead of the usual line break
 for item in shoplist:
     print(item, end=' ')
 
-### Tuple:
+### Tuple (a type of sequence):
 # parentheses used in tuples can be optional
 # the name assigned to a tuple can be changed but not items inside it
 singletuple = (2,)  # create a tuple containing one single item
 
 ### Dictionary:
 # keys in a dictionary are immutable while values can be mutable or not; we should use simple objects for keys
+# key-value pairs are separated by a colon and the pairs are separated themselves by commas and all this is enclosed in a pair of curly braces
+# key will be used as indexing operator to get its associated value
+addressbook = {
+'Swaroop': 'swaroop@swaroopch.com',
+'Larry': 'larry@wall.org',
+'Matsumoto': 'matz@ruby-lang.org',
+'Spammer': 'spammer@hotmail.com'
+}
+print("Swaroop's address is", addressbook['Swaroop'])
+for name, address in addressbook.items():    # use "in" operator
+    print('Contact {} at {}'.format(name, address))
+    
