@@ -1,1 +1,1 @@
-Basic things to learn when starting working Python can be found here.
+Basic things to learn when starting working with Python can be found here.
