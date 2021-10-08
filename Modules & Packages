@@ -1,0 +1,19 @@
+### Writing new Module:
+# the simplest way is to create a file with a .py extension that contains functions and variables. 
+# in Jupyter Notebook, download your notbeook file with codes and functions as .py file and put it in the folder containing your other working notebook files. (Usually C:/Users/...)
+# another method is to write the modules in the native language in which the Python interpreter itself was written. For example, you can write modules in the C programming language, 
+# and when compiled they can be used from your Python code when using the standard Python interpreter.
+
+import sys   # use Python standard library module 'sys'
+print('The command line arguments are:')
+for i in sys.argv:
+    print(i)
+print('\n\nThe PYTHONPATH is', sys.path, '\n')
+***
+dir(module_test)   # returns the list of names defined by an object; in case object is a module, return functions, classes and variables, defined inside that module
+                    # dir() can work on any object while vars() may not work in some cases
+***
+del(name)   # delete a variable/name
+
+### Packages help organize modules
+#  The standard library that comes with Python is an example of such a set of packages and modules.
