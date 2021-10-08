@@ -1,1 +1,1 @@
-Basic syntaxs, functions, modules and packages of Python can be found here.
+Basic things to learn when starting working Python can be found here.
