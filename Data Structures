@@ -1,0 +1,16 @@
+### There are four built-in data structures in Python: list, tuple, dictionary and set.
+
+### List:
+# items of a list are mutable
+shoplist = ['apple', 'mango', 'carrot', 'banana']
+print('These items are:', end=' ')   # use "end" parameter in the call to "print" fuction to indicate that we want to end the output with a space instead of the usual line break
+for item in shoplist:
+    print(item, end=' ')
+
+### Tuple:
+# parentheses used in tuples can be optional
+# the name assigned to a tuple can be changed but not items inside it
+singletuple = (2,)  # create a tuple containing one single item
+
+### Dictionary:
+# keys in a dictionary are immutable while values can be mutable or not; we should use simple objects for keys
