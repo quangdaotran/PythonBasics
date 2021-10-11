@@ -43,6 +43,17 @@ print('{} was {} years old when he wrote this book'.format(name, age)) # format 
 print('Why is {} playing with that python?'.format(name))
 print('{0:.4f}'.format(2/3)) ( = 0.6667)
 print('{0:_^15}'.format('hello')) ( = _____hello_____)
+***
+name = 'Swaroop'
+if name.startswith('Swa'):
+    print('Yes, the string starts with "Swa"')
+if 'a' in name:
+    print('Yes, it contains the string "a"')
+if name.find('war') != -1:
+    print('Yes, it contains the string "war"')
+delimiter = '_*_'
+mylist = ['Brazil', 'Russia', 'India', 'China']
+print(delimiter.join(mylist))   ( = Brazil_*_Russia_*_India_*_China)
 
 ## Boolean:
 10 > 9 ( = True)
