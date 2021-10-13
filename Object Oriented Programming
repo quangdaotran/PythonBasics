@@ -15,8 +15,8 @@ Jimmy.say_ilu()  ( = Ruby, I love)
 
 ## "__init__" method passes initial values to object (input new data to object)
 class Person:
-    def __init__(self, name):   # "name": new parameter/ field
-        self.name = name
+    def __init__(self, name):   # "name" : new parameter/ field
+        self.name = name     
     def say_hi(self):
         print('Hello, my name is', self.name)
 Person('Jimmy').say_hi()  ( = Hello, my name is Jimmy)
