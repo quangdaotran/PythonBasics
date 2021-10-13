@@ -1,1 +1,23 @@
+### object oriented programming: combine data and functionality and wrap it inside something called an object
+## procedure-oriented way of programming: design program around functions i.e. blocks of statements which manipulate data
+## "self" used to refer to the class/ object itself, in which the specific variables, functions operate; "self" needs to be used for any functions defined within a class/object
+    "self" can not be assigned any values manually, Python will automatically do that
+class Person:
+    pass   # "pass" statement indicates an empty block
+p = Person()
+print(p)  ( = <__main__.Person object at 0x000002BEF273F348>)   # print p and its location
+***
+class Person:
+    def say_ilu(self):   # "say_ilu()": new function/method
+        print('Ruby, I love')
+Jimmy = Person()
+Jimmy.say_ilu()  ( = Ruby, I love)
 
+## "__init__" method passes initial values to object (input new data to object)
+class Person:
+    def __init__(self, name):   # "name": new parameter/ field
+        self.name = name
+    def say_hi(self):
+        print('Hello, my name is', self.name)
+Person('Jimmy').say_hi()  ( = Hello, my name is Jimmy)
+Person('Ruby').say_hi()   ( = Hello, my name is Ruby)
