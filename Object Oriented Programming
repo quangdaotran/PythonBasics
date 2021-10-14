@@ -1,7 +1,7 @@
 ### object oriented programming: combine data and functionality and wrap it inside something called an object
 ## procedure-oriented way of programming: design program around functions i.e. blocks of statements which manipulate data
 ## "self" used to refer to the class/ object itself, in which the specific variables, functions operate; "self" needs to be used for any functions defined within a class/object
-    "self" can not be assigned any values manually, Python will automatically do that
+## "self" can not be assigned any values manually, Python will automatically do that
 class Person:
     pass   # "pass" statement indicates an empty block
 p = Person()
@@ -21,3 +21,70 @@ class Person:
         print('Hello, my name is', self.name)
 Person('Jimmy').say_hi()  ( = Hello, my name is Jimmy)
 Person('Ruby').say_hi()   ( = Hello, my name is Ruby)
+
+## class variables & object variables:
+# an object variable with the same name as a class variable will hide the class variable
+# 
+class Robot:
+    """Represents a robot, with a name."""
+    # A class variable, counting the number of robots
+    population = 0
+    def __init__(self, name):           # "name" is an object variable
+        """Initializes the data."""
+        self.name = name
+        print("(Initializing {})".format(self.name))
+        # When this person is created, the robot is added to the population
+        Robot.population += 1         # instead of "Robot.population", we can use  "self.__class__.population"
+    def die(self):
+        """I am dying."""
+        print("{} is being destroyed!".format(self.name))
+        Robot.population -= 1
+        if Robot.population == 0:
+            print("{} was the last one.".format(self.name))
+        else:
+            print("There are still {:d} robots working.".format(Robot.population))
+    def say_hi(self):
+        """Greeting by the robot.
+        Yeah, they can do that."""
+        print("Greetings, my masters call me {}.".format(self.name))
+    @classmethod      # decorator used to mark a method as a class method
+    def how_many(cls):
+        """Prints the current population."""
+        print("We have {:d} robots.".format(cls.population))
+droid1 = Robot("R2-D2")
+droid1.say_hi()
+droid2 = Robot("C-3PO")
+droid2.say_hi()
+Robot.how_many()
+print("\nRobots can do some work here.\n")
+print("Robots have finished their work. So let's destroy them.")
+droid1.die()
+droid2.die()
+Robot.how_many()
+
+## @classmethod & @staticmethod: both are decorators used to indicate that a function/method belongs to a class.
+## a class method takes "cls" (the class itself) as the first parameter while a static method needs no specific parameters.
+## a class method can access or modify the class state while a static method can’t access or modify it.
+## we use @classmethod decorator in python to create a class method and we use @staticmethod decorator to create a static method in python.
+from datetime import date
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    # a class method to create a Person object by birth year.
+    @classmethod
+    def fromBirthYear(cls, name, year):
+        return cls(name, date.today().year - year)
+    # a static method to check if a Person is adult or not.
+    @staticmethod
+    def isAdult(age):
+        return age > 18
+person1 = Person('mayank', 21)
+person2 = Person.fromBirthYear('mayank', 1996)
+print (person1.age)
+print (person2.age)
+print (Person.isAdult(22))
+        
+## Double underscores are used for fully private variables. ... 
+## According to Python documentation − If your class is intended to be subclassed, and you have attributes that you do not want subclasses to use, 
+## consider naming them with double leading underscores and no trailing underscores
